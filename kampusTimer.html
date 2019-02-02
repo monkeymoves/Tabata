@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Easy Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"   crossorigin="anonymous"></script>
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="timer.css"  >
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+   
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="kampuswerkTimer.js" defer></script>
+</head>
+<body>
+<div class="containerTimer">
+    <div class="timerdiv" id="clockdiv">
+            <div class="a">
+                    <span class="message">Set workout parameters</span><br>
+                    <span class="minutes"></span>
+                    <span class="time"></span>
+                    <span class="seconds"></span> <br>
+            
+            
+            
+                </div>
+            
+            <h4 class="text-center">Prep Time</h4>
+            <div class="input-group input-number-group">
+              <div class="input-group-button">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="prep_time" class="input-number" type="number" value="13" min="0" max="1000">
+              <div class="input-group-button">
+                <span class="input-number-increment">+</span>
+              </div>
+            </div>
+
+            <h4 class="text-center">Hang Time</h4>
+            <div class="input-group input-number-group">
+                    <div class="input-group-button">
+                      <span class="input-number-decrement">-</span>
+                    </div>
+                    <input id="hang_time" class="input-number" type="number" value="7" min="0" max="1000">
+                    <div class="input-group-button">
+                      <span class="input-number-increment">+</span>
+                    </div>
+                  </div>
+
+            <h4 class="text-center">Reps</h4>
+            <div class="input-group input-number-group">
+                    <div class="input-group-button">
+                    <span class="input-number-decrement">-</span>
+                    </div>
+                    <input id="reps" class="input-number" type="number" value="10" min="0" max="1000">
+                    <div class="input-group-button">
+                        <span class="input-number-increment">+</span>
+                    </div>
+                </div>                
+
+            <h4 class="text-center">Rest Time</h4>
+            <div class="input-group input-number-group">
+                    <div class="input-group-button">
+                        <span class="input-number-decrement">-</span>
+                    </div>
+                    <input id="rest_time" class="input-number" type="number" value="3" min="0" max="1000">
+                    <div class="input-group-button">
+                        <span class="input-number-increment">+</span>
+                    </div>
+                    </div>
+
+            <h4 class="text-center">Sets</h4>
+            <div class="input-group input-number-group">
+              <div class="input-group-button">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="sets" class="input-number" type="number" value="1" min="0" max="1000">
+              <div class="input-group-button">
+                <span class="input-number-increment">+</span>
+              </div>
+                    </div>
+
+            <h4 class="text-center">Set Rest </h4>
+            <div class="input-group input-number-group">
+                    <div class="input-group-button">
+                        <span class="input-number-decrement">-</span>
+                    </div>
+                    <input id="set_rest" class="input-number" type="number" value="60" min="0" max="1000">
+                    <div class="input-group-button">
+                        <span class="input-number-increment">+</span>
+                    </div>
+                    </div>
+
+                    <span class="mybuttons "><button class="btn btn-primary" id="clickMe" type="button">Click Me!</button></span> <br>
+                    <span class="werkout"></span><br>
+ 
+</div>
+</body>
