@@ -109,9 +109,10 @@ function hangTime(){
         secondsSpan.innerHTML = ''
         werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  <br>  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
 
-        messageSpan.innerHTML = ' DONE'
-        $(".inputShowHide, .werkout").toggle()
+        messageSpan.innerHTML = ' DONE!'
+        $(".inputShowHide").toggle()
         $(".mybuttons").toggle()
+        $(".werkout").toggle()
 
         populateTimer()
         document.body.style.backgroundColor = "MediumSlateBlue";
