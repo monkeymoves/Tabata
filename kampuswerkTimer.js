@@ -62,7 +62,7 @@ function initializeClock(endtime, whattodonext){
     
     function updateClock(){
       var t = getTimeRemaining(endtime);
-      werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  ' + 'sets: ' +  counterSets ;   // t.days +
+      werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  <br>  ' + 'sets: ' +  counterSets ;   // t.days +
       minutesSpan.innerHTML = ('0'+t.minutes).slice(-2)+':';
       secondsSpan.innerHTML = ('0'+t.seconds).slice(-2);
 
@@ -107,7 +107,7 @@ function hangTime(){
         // alert("completed") 
         minutesSpan.innerHTML = ''
         secondsSpan.innerHTML = ''
-        werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
+        werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  <br>  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
 
         messageSpan.innerHTML = ' DONE'
         $(".inputShowHide").toggle()
@@ -131,7 +131,7 @@ function clickbutton(){
     timeSpan.innerHTML = ''
     messageSpan.innerHTML = ' PREP'
     document.body.style.backgroundColor = "MediumSlateBlue";
-    $(".inputShowHide").toggle()
+    $(".inputShowHide, .mybuttons").toggle()
     $(".werkout").toggle()
 
     initializeClock(convertTime(userSetup.PrepTime), hangTime )

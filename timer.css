@@ -5,8 +5,9 @@
   /* background-color: blue */
   font-size: 24px;
 }
-.inputShowHide{
+.inputShowHide .mybuttons{
   display: visible;
+  color: grey;
 }
 
 .werkoutDisplay{
@@ -16,10 +17,11 @@
 .werkout{
   display: none;
   color: white;
-  padding: 20px;
+  padding: 0px;
+  
 }
 .containerTimer {
-    margin: 30;
+    margin: 20;
 
   /* color: #fff; */
   padding: 20px 0; 
@@ -55,6 +57,7 @@
 }
 .message  {
   font-size: 45px;
+  justify-content: center;  
 
 }
 .a {
@@ -91,13 +94,13 @@ align-items: center;
 
 .text-center{
   font-size: 25px;
-
+color:white;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: left;
       -ms-flex-pack: left;
-          justify-content: left;
+          justify-content: center;
 }
 .input-number-group input[type=number]::-webkit-inner-spin-button,
 .input-number-group input[type=number]::-webkit-outer-spin-button {
@@ -110,6 +113,7 @@ align-items: center;
 }
 .input-number {
   margin:  30px 0px 0px 0px;
+  color: grey;
 }
 
 .input-number-group .input-number {
@@ -139,7 +143,7 @@ align-items: center;
   display: inline-block;
   width: 40px;
   background: #e6e6e6;
-  color: #0a0a0a;
+  color:grey;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
