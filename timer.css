@@ -26,8 +26,9 @@
 .timerdiv {
   /* border: 1px solid red;   */
   /* width: 900px; */
-  /* align-items: flex-start;  
-  display: flex; */
+  /* align-items: flex-start;  */
+  display: flex; 
+  flex-direction: column;
   justify-content: center;  
 
 
@@ -36,10 +37,17 @@
   font-size: 45px;
 
 }
+.a {
+  
+color: white;
+justify-content: right;  
+
+}
 
 .minutes, .time, .seconds, .a  {
   font-size: 60px;
-  justify-content: center; 
+
+  /* align-content: center;  */
 
 }
 .userMessages { 
@@ -55,12 +63,21 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-justify-content: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
+.text-center{
+  font-size: 25px;
 
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
 .input-number-group input[type=number]::-webkit-inner-spin-button,
 .input-number-group input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -70,11 +87,14 @@
 .input-number-group .input-group-button {
   line-height: calc(80px/2 - 5px);
 }
+.input-number {
+  margin:  30px 0px 0px 0px;
+}
 
 .input-number-group .input-number {
   width: 80px;
-  padding: 0 12px;
-  vertical-align: top;
+  /* padding: 0 12px;
+  vertical-align: bottom; */
   text-align: center;
   outline: none;
   display: block;

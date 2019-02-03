@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    document.body.style.backgroundColor = "lightseagreen";
+
     console.log('All assets are loaded' + document.getElementById('prep_time').value)
     let userSetup = {
         PrepTime : document.getElementById('prep_time').value,
@@ -61,7 +63,7 @@ function initializeClock(endtime, whattodonext){
     function updateClock(){
       var t = getTimeRemaining(endtime);
       werkoutSpan.innerHTML = 'reps: ' +  counterReps + '</br>' + 'sets: ' +  counterSets ;   // t.days +
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2) +':';
+      minutesSpan.innerHTML = ('0'+t.minutes).slice(-2)+':';
       secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
       if(t.total<0){
@@ -93,7 +95,7 @@ function hangTime(){
         displayRep = 0
         counterReps = userSetup.NoOfReps
         initializeClock(convertTime(userSetup.SetRest), hangTime)
-        document.body.style.backgroundColor = "lightblue";
+        document.body.style.backgroundColor = "MediumSlateBlue  ";
         --counterSets
     } else {
         // alert("completed") 
@@ -102,7 +104,7 @@ function hangTime(){
 
         messageSpan.innerHTML = 'COMPLETE'
         populateTimer()
-        document.body.style.backgroundColor = "lightblue";
+        document.body.style.backgroundColor = "MediumSlateBlue  ";
         // counterSets = userSetup.NoOFSets
 
         // initializeClock( convertTime(userSetup.PrepTime), hangTime );
@@ -114,14 +116,14 @@ function hangTime(){
 function restTime(){
     messageSpan.innerHTML = ' REST '
 
-    document.body.style.backgroundColor = "lightgreen";
+    document.body.style.backgroundColor = "lightseagreen";
     initializeClock(convertTime(userSetup.restTime), hangTime)
 }
 
 function clickbutton(){
     timeSpan.innerHTML = ''
     messageSpan.innerHTML = 'PREPARE '
-    document.body.style.backgroundColor = "lightblue";
+    document.body.style.backgroundColor = "MediumSlateBlue  ";
 
 
     initializeClock(convertTime(userSetup.PrepTime), hangTime )
