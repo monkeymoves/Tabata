@@ -111,6 +111,7 @@ function hangTime(){
 
         messageSpan.innerHTML = ' DONE'
         $(".inputShowHide").toggle()
+        $(".werkout").toggle()
 
         populateTimer()
         document.body.style.backgroundColor = "MediumSlateBlue";
