@@ -62,9 +62,9 @@ function initializeClock(endtime, whattodonext){
     
     function updateClock(){
       var t = getTimeRemaining(endtime);
-      werkoutSpan.innerHTML = 'reps: ' +  counterReps + '</br>' + 'sets: ' +  counterSets ;   // t.days +
+      werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  ' + 'sets: ' +  counterSets ;   // t.days +
       minutesSpan.innerHTML = ('0'+t.minutes).slice(-2)+':';
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+      secondsSpan.innerHTML = ('0'+t.seconds).slice(-2);
 
       if(t.total<0){
         clearInterval(timeinterval);
@@ -81,40 +81,47 @@ let displaySet = 0
 
 function hangTime(){
     if (counterReps > 0){
+        
         displayRep = displayRep + 1 
     }
     messageSpan.innerHTML = 'HANG ' + displayRep
-    document.body.style.backgroundColor = "coral";       
+    document.body.style.backgroundColor = "coral"; 
+
     if (counterReps > 0 ){
 
-        initializeClock(convertTime(userSetup.hangTime), restTime)
         --counterReps
+        initializeClock(convertTime(userSetup.hangTime), restTime)
+        // if (counterSets == 1 ){
+        //     --counterSets
+
+        // }
     } 
     else if (counterSets > 1 ){
-        messageSpan.innerHTML = 'SET REST '
+        --counterSets
+        messageSpan.innerHTML = 'SET REST'
         displayRep = 0
         counterReps = userSetup.NoOfReps
         initializeClock(convertTime(userSetup.SetRest), hangTime)
         document.body.style.backgroundColor = "MediumSlateBlue  ";
-        --counterSets
     } else {
         // alert("completed") 
         minutesSpan.innerHTML = ''
         secondsSpan.innerHTML = ''
+        werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
 
-        messageSpan.innerHTML = 'COMPLETE'
+        messageSpan.innerHTML = ' DONE'
+        $(".inputShowHide").toggle()
+
         populateTimer()
-        document.body.style.backgroundColor = "MediumSlateBlue  ";
-        // counterSets = userSetup.NoOFSets
-
-        // initializeClock( convertTime(userSetup.PrepTime), hangTime );
+        document.body.style.backgroundColor = "MediumSlateBlue";
+  
    }
 }
     
 
  
 function restTime(){
-    messageSpan.innerHTML = ' REST '
+    messageSpan.innerHTML = ' REST'
 
     document.body.style.backgroundColor = "lightseagreen";
     initializeClock(convertTime(userSetup.restTime), hangTime)
@@ -122,9 +129,10 @@ function restTime(){
 
 function clickbutton(){
     timeSpan.innerHTML = ''
-    messageSpan.innerHTML = 'PREPARE '
-    document.body.style.backgroundColor = "MediumSlateBlue  ";
-
+    messageSpan.innerHTML = ' PREP'
+    document.body.style.backgroundColor = "MediumSlateBlue";
+    $(".inputShowHide").toggle()
+    $(".werkout").toggle()
 
     initializeClock(convertTime(userSetup.PrepTime), hangTime )
 }

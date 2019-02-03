@@ -5,7 +5,19 @@
   /* background-color: blue */
   font-size: 24px;
 }
+.inputShowHide{
+  display: visible;
+}
 
+.werkoutDisplay{
+  justify-content: flex-start;
+}
+
+.werkout{
+  display: none;
+  color: white;
+  padding: 20px;
+}
 .containerTimer {
     margin: 30;
 
@@ -16,19 +28,27 @@
 
 
 }
+.colgroup{
+  /* border: 1px solid red;   */
+  /* width: 900px; */
+  /* align-items: flex-start;  */
+  /* display: flex; 
+  flex-direction: column;
+  justify-content: center;   */
+  display: flex;
+  flex: 50%;
 
-.displayClock{
-  font-size: 2rem;
-  justify-content: center;  
+
 
 }
+
 
 .timerdiv {
   /* border: 1px solid red;   */
   /* width: 900px; */
   /* align-items: flex-start;  */
-  display: flex; 
-  flex-direction: column;
+  /* display: flex;  */
+  /* flex-direction: column; */
   justify-content: center;  
 
 
@@ -38,9 +58,10 @@
 
 }
 .a {
-  
+padding: 0;
 color: white;
 justify-content: right;  
+align-items: center;
 
 }
 
