@@ -86,6 +86,7 @@ function hangTime(){
     }
     messageSpan.innerHTML = 'HANG ' + displayRep
     document.body.style.backgroundColor = "coral"; 
+    document.body.style.backgroundImage = "";    
 
     if (counterReps > 0 ){
 
@@ -133,6 +134,13 @@ function clickbutton(){
     timeSpan.innerHTML = ''
     messageSpan.innerHTML = ' PREP'
     document.body.style.backgroundColor = "MediumSlateBlue";
+    document.body.style.backgroundImage = "url('smith.jpg')"; 
+    setTimeout(function(){
+      document.body.style.backgroundColor = "MediumSlateBlue";
+      document.body.style.backgroundImage = ""; 
+    },4000)
+    document.body.style.color = "red";
+    
     $(".inputShowHide, .mybuttons").toggle()
     $(".werkout").toggle()
 
