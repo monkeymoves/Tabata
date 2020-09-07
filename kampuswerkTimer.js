@@ -139,7 +139,48 @@ function clickbutton(){
     initializeClock(convertTime(userSetup.PrepTime), hangTime )
 }
 
+function setmaxHangs(){
+  userSetup.hangTime =  10
+  userSetup.PrepTime =  30
+  userSetup.restTime = 180
+  userSetup.SetRest  = 0
+  userSetup.NoOfReps =  6
+  userSetup.NoOFSets =  0
+  counterReps = 6
+  counterSets = 0
+  document.getElementById('prep_time').value = 30
+  document.getElementById('hang_time').value = 10
+  document.getElementById('rest_time').value = 180
+  document.getElementById('set_rest').value = 0
+  document.getElementById('reps').value = 6
+  document.getElementById('sets').value = 0
+  // messageSpan.innerHTML = 'MAX'
+
+}
+
+ 
+
+function setRepeaters(){
+  userSetup.hangTime =  7
+  userSetup.PrepTime =  30
+  userSetup.restTime = 3
+  userSetup.SetRest  = 60
+  userSetup.NoOfReps =  6
+  userSetup.NoOFSets =  10
+  counterReps = 6
+  counterSets = 12
+  document.getElementById('prep_time').value = 30
+  document.getElementById('hang_time').value = 7
+  document.getElementById('rest_time').value = 3
+  document.getElementById('set_rest').value = 60
+  document.getElementById('reps').value = 6
+  document.getElementById('sets').value = 12
+  // messageSpan.innerHTML = 'REPS'
+}
 document.getElementById("clickMe").onclick = clickbutton;
+document.getElementById("maxHang").onclick = setmaxHangs;
+document.getElementById("repeaters").onclick = setRepeaters;
+
 
 $('.input-number-increment').click(function() {
     var $input = $(this).parents('.input-number-group').find('.input-number');

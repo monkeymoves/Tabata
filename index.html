@@ -34,21 +34,14 @@
                     <span class="seconds"></span> <br>
                     
                     
-                    <span class="mybuttons "><button class="  btn btn-lg btn-block" id="clickMe" type="button" color="grey"><font color="grey"> Start </font></button></span>
-                    
+                    <span class="mybuttons "><button class="  btn btn-lg btn-block btn-success" id="clickMe" type="button" color="grey"><font color="white"> Start </font></button></span>
+                    <span class="mybuttons "><button class="  btn btn-lg btn-danger btn-block" id="maxHang" type="button" color="red"><font color="white"> Max Hangs </font></button></span>
+                    <span class="mybuttons "><button class="  btn btn-lg btn-block btn-primary" id="repeaters" type="button" color="grey"><font color="white"> Repeaters </font></button></span>
+
                 </div>
                 <span class="werkout"></span>
             <div class="inputShowHide"> 
-            <h4 class="text-center">Prep Time</h4>
-            <div class="input-group input-number-group">
-              <div class="input-group-button  ">
-                <span class="input-number-decrement">-</span>
-              </div>
-              <input id="prep_time" class="input-number" type="number" value="30" min="0" max="1000">
-              <div class="input-group-button  ">
-                <span class="input-number-increment">+</span>
-              </div>
-            </div>
+            
 
             <h4 class="text-center">Hang Time</h4>
             <div class="input-group input-number-group ">
@@ -56,6 +49,16 @@
                       <span class="input-number-decrement">-</span>
                     </div>
                     <input id="hang_time" class="input-number"  type="number" value="7" min="0" max="1000">
+                    <div class="input-group-button  ">
+                      <span class="input-number-increment">+</span>
+                    </div>
+                  </div>
+                  <h4 class="text-center">Rest Time</h4>
+                  <div class="input-group input-number-group">
+                    <div class="input-group-button  ">
+                      <span class="input-number-decrement">-</span>
+                    </div>
+                    <input id="rest_time" class="input-number" type="number" value="3" min="0" max="1000">
                     <div class="input-group-button  ">
                       <span class="input-number-increment">+</span>
                     </div>
@@ -72,17 +75,6 @@
                     </div>
                 </div>                
 
-            <h4 class="text-center">Rest Time</h4>
-            <div class="input-group input-number-group">
-                    <div class="input-group-button  ">
-                        <span class="input-number-decrement">-</span>
-                    </div>
-                    <input id="rest_time" class="input-number" type="number" value="3" min="0" max="1000">
-                    <div class="input-group-button  ">
-                        <span class="input-number-increment">+</span>
-                    </div>
-                    </div>
-
             <h4 class="text-center">Sets</h4>
             <div class="input-group input-number-group">
               <div class="input-group-button  ">
@@ -92,21 +84,29 @@
               <div class="input-group-button  ">
                 <span class="input-number-increment">+</span>
               </div>
-                    </div>
-
+            </div>
+            
             <h4 class="text-center">Set Rest </h4>
             <div class="input-group input-number-group">
-                    <div class="input-group-button  ">
-                        <span class="input-number-decrement">-</span>
-                    </div>
-                    <input id="set_rest" class="input-number" type="number" value="60" min="0" max="1000">
-                    <div class="input-group-button  ">
-                        <span class="input-number-increment">+</span>
-                    </div>
-                    </div>
-    </div>
-<br>
-
- 
-</div>
+              <div class="input-group-button  ">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="set_rest" class="input-number" type="number" value="60" min="0" max="1000">
+              <div class="input-group-button  ">
+                <span class="input-number-increment">+</span>
+              </div>
+            </div>
+            
+            <h4 class="text-center">Prep Time</h4>
+            <div class="input-group input-number-group">
+              <div class="input-group-button  ">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="prep_time" class="input-number" type="number" value="30" min="0" max="1000">
+              <div class="input-group-button  ">
+                <span class="input-number-increment">+</span>
+              </div>
+            </div>
+          </div>
+          </div>
 </body>
