@@ -111,12 +111,14 @@ function hangTime(){
         werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  <br>  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
 
         messageSpan.innerHTML = ' DONE!'
+        document.body.style.backgroundImage = "url('https://media.giphy.com/media/pHb82xtBPfqEg/giphy.gif)"; 
+
         $(".inputShowHide").toggle()
         $(".mybuttons").toggle()
         $(".werkout").toggle()
 
         populateTimer()
-        document.body.style.backgroundColor = "MediumSlateBlue";
+        // document.body.style.backgroundColor = "MediumSlateBlue";
   
    }
 }
