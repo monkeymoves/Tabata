@@ -111,7 +111,7 @@ function hangTime(){
         werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  <br>  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
 
         messageSpan.innerHTML = ' DONE!'
-        document.body.style.backgroundImage = "url('https://media.giphy.com/media/pHb82xtBPfqEg/giphy.gif)"; 
+        document.body.style.backgroundImage = "url('https://media.giphy.com/media/pHb82xtBPfqEg/giphy.gif')"; 
 
         $(".inputShowHide").toggle()
         $(".mybuttons").toggle()
