@@ -178,7 +178,7 @@ function setRepeaters(){
   userSetup.NoOfReps =  6
   userSetup.NoOFSets =  10
   counterReps = 6
-  counterSets = 12
+  counterSets = 14
   document.getElementById('prep_time').value = 30
   document.getElementById('hang_time').value = 7
   document.getElementById('rest_time').value = 3
