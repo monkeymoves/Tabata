@@ -78,55 +78,61 @@ function initializeClock(endtime, whattodonext){
 
 let displayRep = 0
 let displaySet = 0
+let workoutSequence = ['4 Crimp', '4 Crimp', '4 Crimp', '4 Open', '4 Open', '4 Open','3 Crimp', '3 Crimp', '3 Crimp', '3 Open', '3 Open', '3 Open','2 Fr Crimp', '2 Fr Crimp','2 Md Crimp', '2 Md Crimp','2 Fr Open', '2 Fr Open','2 Md Open', '2 Md Open', 'Pinkies' ];
+let exerciseSpan = clock.querySelector('.exercise'); // Add this line to define the exerciseSpan variable
 
-function hangTime(){
-    if (counterReps > 0){
-        
-        displayRep = displayRep + 1 
-    }
-    messageSpan.innerHTML = 'HANG ' + displayRep
-    document.body.style.backgroundColor = "coral"; 
-    document.body.style.backgroundImage = "";    
+function hangTime() {
+  let currentExercise = '';
 
-    if (counterReps > 0 ){
+  if (counterReps > 0) {
+    displayRep = displayRep + 1;
+    let currentExerciseIndex = displayRep - 1;
+    currentExercise = workoutSequence[currentExerciseIndex];
+  }
 
-        --counterReps
-        initializeClock(convertTime(userSetup.hangTime), restTime)
-        // if (counterSets == 1 ){
-        //     --counterSets
-
-        // }
-    } 
-    else if (counterSets > 1 ){
-        --counterSets
-        messageSpan.innerHTML = 'SET REST'
-        displayRep = 0
-        counterReps = userSetup.NoOfReps
-        initializeClock(convertTime(userSetup.SetRest), hangTime)
-        document.body.style.backgroundColor = "MediumSlateBlue  ";
-    } else {
-        // alert("completed") 
-        minutesSpan.innerHTML = ''
-        secondsSpan.innerHTML = ''
-        werkoutSpan.innerHTML = 'reps: ' +  counterReps + '  <br>  ' + 'sets: ' +  (counterSets-1) ;   // t.days +
-
-        messageSpan.innerHTML = ' DONE!'
-        
-        $(".inputShowHide").toggle()
-        $(".mybuttons").toggle()
-        $(".werkout").toggle()
-        
-        populateTimer()
-        document.body.style.backgroundImage = "url('https://media.giphy.com/media/pHb82xtBPfqEg/giphy.gif')"; 
-        // document.body.style.backgroundColor = "MediumSlateBlue";
+  messageSpan.innerHTML = 'HANG ' + displayRep;
   
-   }
+  if (userSetup.NoOFSets === 0 && userSetup.NoOfReps === 21) {
+    exerciseSpan.innerHTML = currentExercise;
+  } else {
+    exerciseSpan.innerHTML = '';
+  }
+  
+  document.body.style.backgroundColor = "coral";
+  document.body.style.backgroundImage = "";
+
+  if (counterReps > 0) {
+    --counterReps;
+    initializeClock(convertTime(userSetup.hangTime), restTime);
+  } else if (counterSets > 1) {
+    workoutSequence.splice(0, 1); // Remove the first element from the workoutSequence array
+    --counterSets;
+    messageSpan.innerHTML = 'SET REST';
+    exerciseSpan.innerHTML = ''; // Clear the exercise text during set rest
+    displayRep = 0;
+    counterReps = userSetup.NoOfReps;
+    initializeClock(convertTime(userSetup.SetRest), hangTime);
+    document.body.style.backgroundColor = "MediumSlateBlue";
+  } else {
+    minutesSpan.innerHTML = '';
+    secondsSpan.innerHTML = '';
+    werkoutSpan.innerHTML = 'reps: ' + counterReps + '  <br>  ' + 'sets: ' + (counterSets - 1);
+    messageSpan.innerHTML = ' DONE!';
+    $(".inputShowHide").toggle();
+    $(".mybuttons").toggle();
+    $(".werkout").toggle();
+    populateTimer();
+    document.body.style.backgroundImage = "url('https://media.giphy.com/media/pHb82xtBPfqEg/giphy.gif')";
+  }
 }
+
+
     
 
  
 function restTime(){
     messageSpan.innerHTML = ' REST'
+    exerciseSpan.innerHTML = ''; // Clear exercise text during rest
 
     document.body.style.backgroundColor = "lightseagreen";
     initializeClock(convertTime(userSetup.restTime), hangTime)
@@ -187,9 +193,30 @@ function setRepeaters(){
   document.getElementById('sets').value = 12
   // messageSpan.innerHTML = 'REPS'
 }
+
+function setEmil() {
+  userSetup.hangTime = 10;
+  userSetup.PrepTime = 13;
+  userSetup.restTime = 20;
+  userSetup.SetRest = 0;
+  userSetup.NoOfReps = 21;
+  userSetup.NoOFSets = 0;
+  counterReps = userSetup.NoOfReps; // Update counterReps with the correct value
+  counterSets = 0;
+  document.getElementById('prep_time').value = 30;
+  document.getElementById('hang_time').value = 10;
+  document.getElementById('rest_time').value = 20;
+  document.getElementById('set_rest').value = 0;
+  document.getElementById('reps').value = 21;
+  document.getElementById('sets').value = 0;
+  // messageSpan.innerHTML = 'MAX'
+}
+
+
 document.getElementById("clickMe").onclick = clickbutton;
 document.getElementById("maxHang").onclick = setmaxHangs;
 document.getElementById("repeaters").onclick = setRepeaters;
+document.getElementById("emil").onclick = setEmil;
 
 
 $('.input-number-increment').click(function() {

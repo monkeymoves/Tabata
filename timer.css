@@ -66,6 +66,11 @@
   justify-content: center;  
 
 }
+.exercise {
+  font-size: 35px;
+  justify-content: center;  
+  margin-bottom: 10px;
+}
 .a {
 padding: 0;
 color: white;
