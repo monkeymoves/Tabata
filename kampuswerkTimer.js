@@ -78,7 +78,7 @@ function initializeClock(endtime, whattodonext){
 
 let displayRep = 0
 let displaySet = 0
-let workoutSequence = ['4 Crimp', '4 Crimp', '4 Crimp', '4 Open', '4 Open', '4 Open','3 Crimp', '3 Crimp', '3 Crimp', '3 Open', '3 Open', '3 Open','2 Fr Crimp', '2 Fr Crimp','2 Md Crimp', '2 Md Crimp','2 Fr Open', '2 Fr Open','2 Md Open', '2 Md Open', 'Pinkies' ];
+let workoutSequence = ['Warm Up', 'Warm Up','4 Crimp', '4 Crimp', '4 Crimp', '4 Open', '4 Open', '4 Open','3 Crimp', '3 Crimp', '3 Crimp', '3 Open', '3 Open', '3 Open','2 Fr Crimp', '2 Fr Crimp','2 Md Crimp', '2 Md Crimp','2 Fr Open', '2 Fr Open','2 Md Open', '2 Md Open', 'Cool Down', 'Cool Down' ];
 let exerciseSpan = clock.querySelector('.exercise'); // Add this line to define the exerciseSpan variable
 
 function hangTime() {
@@ -199,7 +199,7 @@ function setEmil() {
   userSetup.PrepTime = 13;
   userSetup.restTime = 20;
   userSetup.SetRest = 0;
-  userSetup.NoOfReps = 21;
+  userSetup.NoOfReps = 24;
   userSetup.NoOFSets = 0;
   counterReps = userSetup.NoOfReps; // Update counterReps with the correct value
   counterSets = 0;
