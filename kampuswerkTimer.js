@@ -195,7 +195,7 @@ document.getElementById('sets').value = 12
 
 function setEmil() {
 userSetup.hangTime = 10;
-userSetup.PrepTime = 13;
+userSetup.PrepTime = 30;
 userSetup.restTime = 20;
 userSetup.SetRest = 0;
 userSetup.NoOfReps = 24;
